@@ -235,7 +235,9 @@ public class SignatureThread extends Thread
                     
                     if (dniToCheck != null)
                     {
-                        String dnCertificate = xcert.getCertificate().getSubjectX500Principal().getName();
+//                        String dnCertificate = xcert.getCertificate().getSubjectX500Principal().getName();
+                        // Mejor así, si no no valida
+                        String dnCertificate = xcert.getCertificate().getSubjectDN().toString();
                         
                         if (! dnCertificate.contains(dniToCheck))
                         {
